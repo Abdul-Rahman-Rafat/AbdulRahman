@@ -1145,6 +1145,9 @@ nav .nav-controls {
   margin: 22px 0 30px;
   line-height: 1.1;
 }
+:root.rtl .contact-big {
+  line-height: 1.5;
+}
 .contact-big em {
   font-style: italic;
   color: var(--accent);
