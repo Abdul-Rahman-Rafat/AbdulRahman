@@ -57,7 +57,8 @@ function Hero({ text, sectionRef, onScrollToSection, projectsRef }) {
         item.node.style.top = `${y * scale - size / 2}px`;
 
         const icon = item.node.querySelector("i");
-        if (icon) icon.style.transform = `rotate(${(-item.angle * 180) / Math.PI}deg)`;
+        if (icon)
+          icon.style.transform = `rotate(${(-item.angle * 180) / Math.PI}deg)`;
       });
 
       animationId = requestAnimationFrame(tick);
@@ -78,9 +79,28 @@ function Hero({ text, sectionRef, onScrollToSection, projectsRef }) {
         <div className="role-tag">{text.roleTag}</div>
 
         <div className="hero-center" ref={heroCenterRef}>
-          <svg className="orbit-svg" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="260" cy="260" r="155" stroke="rgba(0,229,204,0.07)" strokeWidth="1" strokeDasharray="4 8" />
-            <circle cx="260" cy="260" r="220" stroke="rgba(139,92,246,0.05)" strokeWidth="1" strokeDasharray="3 10" />
+          <svg
+            className="orbit-svg"
+            viewBox="0 0 520 520"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="260"
+              cy="260"
+              r="155"
+              stroke="rgba(0,229,204,0.07)"
+              strokeWidth="1"
+              strokeDasharray="4 8"
+            />
+            <circle
+              cx="260"
+              cy="260"
+              r="220"
+              stroke="rgba(139,92,246,0.05)"
+              strokeWidth="1"
+              strokeDasharray="3 10"
+            />
             <circle cx="260" cy="105" r="3" fill="rgba(0,229,204,0.4)" />
             <circle cx="415" cy="260" r="3" fill="rgba(0,229,204,0.3)" />
             <circle cx="260" cy="415" r="3" fill="rgba(0,229,204,0.4)" />
@@ -111,17 +131,39 @@ function Hero({ text, sectionRef, onScrollToSection, projectsRef }) {
 
         <div className="social-strip">
           {socialLinks.map((link) => (
-            <a href={link.url} target="_blank" rel="noreferrer" className="social-icon" aria-label={link.name} key={link.name}>
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+              className="social-icon"
+              aria-label={link.name}
+              key={link.name}
+            >
               <SocialIcon name={link.name} />
             </a>
           ))}
         </div>
 
-        <h1 className="hero-name">Abdulrahman <em>Rafat</em></h1>
+        <h1 className="hero-name">
+          {text.myFName} <em>{text.myLName}</em>
+        </h1>
         <p className="hero-subtitle">{text.heroSubtitle}</p>
         <div className="hero-ctas">
-          <button className="btn-primary" type="button" onClick={() => onScrollToSection(projectsRef, "projects")}>{text.viewWork}</button>
-          <a href={cvLink} target="_blank" rel="noreferrer" className="btn-outline">{text.downloadCv}</a>
+          <button
+            className="btn-primary"
+            type="button"
+            onClick={() => onScrollToSection(projectsRef, "projects")}
+          >
+            {text.viewWork}
+          </button>
+          <a
+            href={cvLink}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-outline"
+          >
+            {text.downloadCv}
+          </a>
         </div>
       </div>
     </section>

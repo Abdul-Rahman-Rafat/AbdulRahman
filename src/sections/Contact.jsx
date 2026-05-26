@@ -119,36 +119,36 @@ function Contact({ text, sectionRef }) {
                 <RiCloseLine size={18} />
               </button>
 
-              <h3>Send a Message</h3>
+              <h3>{text.sendMessage}</h3>
               <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-field">
-                  <label htmlFor="name">Your Name</label>
+                  <label htmlFor="name">{text.yourName}</label>
                   <input
                     type="text"
                     id="name"
                     name="from_name"
-                    placeholder="Your name"
+                    placeholder={text.namePlaceholder}
                     required
                   />
                 </div>
 
                 <div className="form-field">
-                  <label htmlFor="email">Your Email</label>
+                  <label htmlFor="email">{text.yourEmail}</label>
                   <input
                     type="email"
                     id="email"
                     name="from_email"
-                    placeholder="example@gmail.com"
+                    placeholder={text.emailPlaceholder}
                     required
                   />
                 </div>
 
                 <div className="form-field">
-                  <label htmlFor="message">Your Message</label>
+                  <label htmlFor="message">{text.yourMessage}</label>
                   <textarea
                     id="message"
                     name="message"
-                    placeholder="Hello, I'd like to talk about..."
+                    placeholder={text.messagePlaceholder}
                     rows="5"
                     required
                   ></textarea>
@@ -159,7 +159,7 @@ function Contact({ text, sectionRef }) {
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? "Sending..." : text.sendMessage}
                   {/* <RiSendPlaneLine size={15} /> */}
                 </button>
                 {formMessage && (

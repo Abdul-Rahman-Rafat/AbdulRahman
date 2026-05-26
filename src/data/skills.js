@@ -1,12 +1,61 @@
 export const orbitSkills = [
-  { name: "React", icon: "devicon-react-original colored", orbit: "inner", angle: 0, speed: 0.4 },
-  { name: "Python", icon: "devicon-python-plain colored", orbit: "inner", angle: 45, speed: 0.4 },
-  { name: "Django", icon: "devicon-django-plain", color: "#44b78b", orbit: "inner", angle: 90, speed: 0.4 },
-  { name: "JavaScript", icon: "devicon-javascript-plain colored", orbit: "inner", angle: 135, speed: 0.4 },
-  { name: "HTML5", icon: "devicon-html5-plain colored", orbit: "outer", angle: 20, speed: -0.25 },
-  { name: "Tailwind", icon: "devicon-tailwindcss-plain colored", orbit: "outer", angle: 110, speed: -0.25 },
-  { name: "Git", icon: "devicon-git-plain colored", orbit: "outer", angle: 200, speed: -0.25 },
-  { name: "Redux", icon: "devicon-redux-plain colored", orbit: "outer", angle: 290, speed: -0.25 },
+  {
+    name: "React",
+    icon: "devicon-react-original colored",
+    orbit: "inner",
+    angle: 0,
+    speed: 0.4,
+  },
+  {
+    name: "Python",
+    icon: "devicon-python-plain colored",
+    orbit: "inner",
+    angle: 45,
+    speed: 0.4,
+  },
+  {
+    name: "Django",
+    icon: "devicon-django-plain",
+    color: "#44b78b",
+    orbit: "inner",
+    angle: 90,
+    speed: 0.4,
+  },
+  {
+    name: "JavaScript",
+    icon: "devicon-javascript-plain colored",
+    orbit: "inner",
+    angle: 135,
+    speed: 0.4,
+  },
+  {
+    name: "HTML5",
+    icon: "devicon-html5-plain colored",
+    orbit: "outer",
+    angle: 20,
+    speed: -0.25,
+  },
+  {
+    name: "Tailwind",
+    icon: "devicon-tailwindcss-plain colored",
+    orbit: "outer",
+    angle: 110,
+    speed: -0.25,
+  },
+  {
+    name: "Git",
+    icon: "devicon-git-plain colored",
+    orbit: "outer",
+    angle: 200,
+    speed: -0.25,
+  },
+  {
+    name: "Redux",
+    icon: "devicon-redux-plain colored",
+    orbit: "outer",
+    angle: 290,
+    speed: -0.25,
+  },
 ];
 
 export const skills = [
@@ -16,6 +65,7 @@ export const skills = [
   { name: "React", icon: "devicon-react-original colored" },
   { name: "Tailwind", icon: "devicon-tailwindcss-plain colored" },
   { name: "Redux", icon: "devicon-redux-plain colored" },
+  { name: "axios", icon: "devicon-axios-plain colored" },
   { name: "Python", icon: "devicon-python-plain colored" },
   { name: "Django", icon: "devicon-django-plain", color: "#44b78b" },
   { name: "PostgreSQL", icon: "devicon-postgresql-plain colored" },
@@ -23,5 +73,4 @@ export const skills = [
   { name: "Git", icon: "devicon-git-plain colored" },
   { name: "GitHub", icon: "devicon-github-original", color: "#f0ede8" },
   { name: "Figma", icon: "devicon-figma-plain colored" },
-  { name: "VS Code", icon: "devicon-vscode-plain colored" },
 ];

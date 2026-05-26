@@ -669,6 +669,7 @@ nav .nav-controls {
   text-transform: uppercase;
   margin-bottom: 14px;
   display: flex;
+  justify-self: baseline;
   align-items: center;
   gap: 12px;
 }
