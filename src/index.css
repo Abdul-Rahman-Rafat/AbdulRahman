@@ -7,6 +7,30 @@
         padding: 0;
       }
 
+      @font-face {
+        font-family: "Alexandria";
+        src: url("./fonts/Alexandria/Alexandria-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Alexandria";
+        src: url("./fonts/Alexandria/Alexandria-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "Alexandria";
+        src: url("./fonts/Alexandria/Alexandria-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
       :root {
         --bg: #060608;
         --bg2: #0f0f12;
@@ -20,6 +44,7 @@
         --font-display: "Cormorant Garamond", Georgia, serif;
         --font-body: "Outfit", system-ui, sans-serif;
         --font-mono: "Space Mono", monospace;
+        --font-ar: "Alexandria", system-ui, sans-serif;
         --shadow: rgba(0, 0, 0, 0.4);
       }
 
@@ -60,6 +85,12 @@
       :root.rtl body {
         direction: rtl;
         text-align: right;
+        font-family: var(--font-ar);
+      }
+      :root.rtl {
+        --font-display: var(--font-ar);
+        --font-body: var(--font-ar);
+        --font-mono: var(--font-ar);
       }
       :root.rtl .section-label {
         flex-direction: row-reverse;
@@ -167,7 +198,7 @@
       }
       .nav-logo {
         font-family: var(--font-mono);
-        font-size: 13px;
+        font-size: 14px;
         letter-spacing: 0.15em;
         color: var(--accent);
         text-transform: uppercase;
@@ -185,7 +216,7 @@
         flex-direction: row;
       }
       .nav-links a {
-        font-size: 13px;
+        font-size: 14px;
         color: var(--muted);
         text-decoration: none;
         letter-spacing: 0.05em;
@@ -210,7 +241,7 @@
       }
       .nav-cta {
         font-family: var(--font-mono);
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.12em;
         padding: 10px 22px;
         border: 1px solid rgba(0, 168, 150, 0.4);
@@ -226,7 +257,7 @@
 
       .nav-toggle-btn {
         font-family: var(--font-mono);
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.1em;
         padding: 7px 13px;
         border: 1px solid var(--border);
@@ -278,7 +309,7 @@
 
       .role-tag {
         font-family: var(--font-mono);
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.2em;
         color: var(--accent);
         text-transform: uppercase;
@@ -358,7 +389,7 @@
         left: 50%;
         transform: translateX(-50%);
         font-family: var(--font-mono);
-        font-size: 8px;
+        font-size: 10px;
         letter-spacing: 0.12em;
         color: var(--accent);
         text-transform: uppercase;
@@ -451,7 +482,7 @@
       }
       .photo-placeholder span {
         font-family: var(--font-mono);
-        font-size: 8px;
+        font-size: 10px;
         color: var(--muted);
         letter-spacing: 0.15em;
         text-transform: uppercase;
@@ -507,7 +538,7 @@
         font-weight: 300;
       }
       .hero-subtitle {
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 300;
         color: var(--muted);
         letter-spacing: 0.08em;
@@ -535,7 +566,7 @@
       /* â”€â”€â”€ Buttons â”€â”€â”€ */
       .btn-primary {
         font-family: var(--font-mono);
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.14em;
         padding: 13px 30px;
         background: var(--accent);
@@ -550,7 +581,7 @@
       }
       .btn-outline {
         font-family: var(--font-mono);
-        font-size: 11px;
+        font-size: 12px;
         letter-spacing: 0.14em;
         padding: 13px 30px;
         border: 1px solid var(--border);
@@ -577,7 +608,7 @@
       }
       .scroll-hint span {
         font-family: var(--font-mono);
-        font-size: 8px;
+        font-size: 10px;
         letter-spacing: 0.2em;
         color: var(--muted);
         text-transform: uppercase;
@@ -616,7 +647,7 @@
       }
       .section-label {
         font-family: var(--font-mono);
-        font-size: 10px;
+        font-size: 11px;
         letter-spacing: 0.25em;
         color: var(--accent);
         text-transform: uppercase;
@@ -652,7 +683,7 @@
         align-items: start;
       }
       .about-text p {
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.85;
         /* color: rgba(240, 237, 232, 0.68); */
         margin-bottom: 18px;
@@ -668,7 +699,7 @@
         flex-wrap: wrap;
       }
       .about-btn {
-        font-size: 11px;
+        font-size: 12px;
         padding: 11px 22px;
       }
       .stats-grid {
@@ -690,7 +721,7 @@
         margin-bottom: 6px;
       }
       .stat-label {
-        font-size: 11px;
+        font-size: 12px;
         color: var(--muted);
         letter-spacing: 0.05em;
       }
@@ -755,7 +786,7 @@
       }
       .skill-item span {
         font-family: var(--font-mono);
-        font-size: 8px;
+        font-size: 10px;
         color: var(--muted);
         letter-spacing: 0.1em;
         text-transform: uppercase;
@@ -809,7 +840,7 @@
       }
 
       .project-preview {
-        height: 160px;
+        height: 190px;
         background: var(--bg3);
         overflow: hidden;
         position: relative;
@@ -817,6 +848,21 @@
         align-items: center;
         justify-content: center;
         border-bottom: 1px solid var(--border);
+      }
+      .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+        filter: saturate(0.95) brightness(0.82);
+        transition:
+          transform 0.35s ease,
+          filter 0.35s ease;
+      }
+      .project-card:hover .project-image {
+        transform: scale(1.04);
+        filter: saturate(1) brightness(0.95);
       }
       .project-preview-inner {
         width: 100%;
@@ -841,7 +887,7 @@
         top: 12px;
         left: 12px;
         font-family: var(--font-mono);
-        font-size: 9px;
+        font-size: 10px;
         letter-spacing: 0.15em;
         color: var(--accent);
         background: rgba(6, 6, 8, 0.85);
@@ -865,7 +911,7 @@
       }
 
       .project-desc {
-        font-size: 12px;
+        font-size: 13px;
         color: var(--muted);
         line-height: 1.7;
         flex: 1;
@@ -878,7 +924,7 @@
       }
       .project-tag {
         font-family: var(--font-mono);
-        font-size: 8px;
+        font-size: 10px;
         color: var(--accent);
         letter-spacing: 0.1em;
         border: 1px solid rgba(0, 229, 204, 0.2);
@@ -895,7 +941,7 @@
       }
       .project-link {
         font-family: var(--font-mono);
-        font-size: 9px;
+        font-size: 10px;
         letter-spacing: 0.12em;
         color: var(--muted);
         text-decoration: none;
@@ -909,8 +955,8 @@
         color: var(--accent);
       }
       .project-link svg {
-        width: 10px;
-        height: 10px;
+        width: 13px;
+        height: 13px;
       }
       .project-link-button {
         background: transparent;
@@ -956,7 +1002,7 @@
       }
       .project-more-label {
         font-family: var(--font-mono);
-        font-size: 9px;
+        font-size: 10px;
         color: var(--muted);
         letter-spacing: 0.15em;
         text-transform: uppercase;
@@ -997,7 +1043,7 @@
       }
       .contact-detail-label {
         font-family: var(--font-mono);
-        font-size: 9px;
+        font-size: 10px;
         letter-spacing: 0.2em;
         text-transform: uppercase;
         color: var(--accent);
@@ -1006,7 +1052,7 @@
       .contact-detail a,
       .contact-detail span {
         font-family: var(--font-mono);
-        font-size: 12px;
+        font-size: 13px;
         color: var(--muted);
         text-decoration: none;
         letter-spacing: 0.06em;
@@ -1023,7 +1069,7 @@
       }
       .social-btn {
         font-family: var(--font-mono);
-        font-size: 9px;
+        font-size: 10px;
         letter-spacing: 0.15em;
         padding: 10px 20px;
         border: 1px solid var(--border);
@@ -1046,7 +1092,7 @@
         align-items: center;
         justify-content: space-between;
         font-family: var(--font-mono);
-        font-size: 9px;
+        font-size: 10px;
         color: var(--muted);
         letter-spacing: 0.1em;
       }

@@ -11,7 +11,11 @@ function ProjectCard({ project }) {
     <a href={project.liveUrl} target="_blank" rel="noreferrer" className="project-card">
       <div className="project-preview">
         <div className="project-num-badge">{project.number}</div>
-        <div className="project-preview-inner">{project.preview}</div>
+        {project.image ? (
+          <img className="project-image" src={project.image} alt={`${project.title} preview`} />
+        ) : (
+          <div className="project-preview-inner">{project.preview}</div>
+        )}
       </div>
       <div className="project-body">
         <h3 className="project-title">{project.title}</h3>
@@ -24,12 +28,12 @@ function ProjectCard({ project }) {
       </div>
       <div className="project-footer">
         <span className="project-link">
-          {project.githubUrl ? <ExternalIcon /> : <GitHubIcon />}
+          {project.githubUrl ? <ExternalIcon /> : <GitHubIcon size={13} />}
           {project.githubUrl ? "Live Demo" : "GitHub"}
         </span>
         {project.githubUrl && (
           <button className="project-link project-link-button" onClick={openGithub}>
-            <GitHubIcon />
+            <GitHubIcon size={13} />
             GitHub
           </button>
         )}

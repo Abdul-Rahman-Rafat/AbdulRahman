@@ -17,7 +17,7 @@ function Projects({ text }) {
           ))}
 
           <a href="https://github.com/Abdul-Rahman-Rafat" target="_blank" rel="noreferrer" className="project-more">
-            <span className="project-link"><GitHubIcon /></span>
+            <span className="project-link"><GitHubIcon size={16} /></span>
             <div className="project-more-label">More on GitHub</div>
           </a>
         </div>
