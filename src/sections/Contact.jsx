@@ -1,8 +1,8 @@
 import { contactDetails, socialLinks } from "../data/personal";
 
-function Contact({ text }) {
+function Contact({ text, sectionRef }) {
   return (
-    <section id="contact">
+    <section id="contact" ref={sectionRef}>
       <div className="section-wrap">
         <div className="contact-inner">
           <div className="section-label">{text.sectionContact}</div>

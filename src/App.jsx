@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import BackgroundCanvas from "./components/BackgroundCanvas";
 import CustomCursor from "./components/CustomCursor";
 import Navbar from "./components/Navbar";
+import RocketNavigator from "./components/RocketNavigator";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
@@ -13,7 +14,19 @@ import { translations } from "./data/translations";
 function App() {
   const [theme, setTheme] = useState("dark");
   const [language, setLanguage] = useState("en");
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
   const text = translations[language];
+  const sections = [
+    { label: "Home", ref: homeRef },
+    { label: "About", ref: aboutRef },
+    { label: "Skills", ref: skillsRef },
+    { label: "Projects", ref: projectsRef },
+    { label: "Contact", ref: contactRef },
+  ];
 
   useEffect(() => {
     const root = document.documentElement;
@@ -60,6 +73,13 @@ function App() {
     setLanguage(language === "en" ? "ar" : "en");
   }
 
+  function scrollToSection(sectionRef) {
+    sectionRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+
   return (
     <>
       <BackgroundCanvas />
@@ -70,12 +90,20 @@ function App() {
         language={language}
         onThemeToggle={handleThemeToggle}
         onLanguageToggle={handleLanguageToggle}
+        onScrollToSection={scrollToSection}
+        sectionRefs={{
+          about: aboutRef,
+          skills: skillsRef,
+          projects: projectsRef,
+          contact: contactRef,
+        }}
       />
-      <Hero text={text} />
-      <About text={text} />
-      <Skills text={text} />
-      <Projects text={text} />
-      <Contact text={text} />
+      <RocketNavigator sections={sections} onScrollToSection={scrollToSection} />
+      <Hero text={text} sectionRef={homeRef} onScrollToSection={scrollToSection} projectsRef={projectsRef} />
+      <About text={text} sectionRef={aboutRef} onScrollToSection={scrollToSection} contactRef={contactRef} />
+      <Skills text={text} sectionRef={skillsRef} />
+      <Projects text={text} sectionRef={projectsRef} />
+      <Contact text={text} sectionRef={contactRef} />
       <Footer text={text} />
     </>
   );

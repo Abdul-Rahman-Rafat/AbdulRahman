@@ -4,7 +4,7 @@ import { cvLink, socialLinks } from "../data/personal";
 import { orbitSkills } from "../data/skills";
 import { SocialIcon } from "../components/Icons";
 
-function Hero({ text }) {
+function Hero({ text, sectionRef, onScrollToSection, projectsRef }) {
   const heroCenterRef = useRef(null);
 
   useEffect(() => {
@@ -73,7 +73,7 @@ function Hero({ text }) {
   }, []);
 
   return (
-    <section className="hero" id="home">
+    <section className="hero" id="home" ref={sectionRef}>
       <div className="hero-inner">
         <div className="role-tag">{text.roleTag}</div>
 
@@ -120,7 +120,7 @@ function Hero({ text }) {
         <h1 className="hero-name">Abdulrahman <em>Rafat</em></h1>
         <p className="hero-subtitle">{text.heroSubtitle}</p>
         <div className="hero-ctas">
-          <a href="#projects" className="btn-primary">{text.viewWork}</a>
+          <button className="btn-primary" type="button" onClick={() => onScrollToSection(projectsRef)}>{text.viewWork}</button>
           <a href={cvLink} target="_blank" rel="noreferrer" className="btn-outline">{text.downloadCv}</a>
         </div>
       </div>

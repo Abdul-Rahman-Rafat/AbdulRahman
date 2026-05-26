@@ -1,21 +1,37 @@
 import { RiMoonLine, RiSunLine } from "@remixicon/react";
 
-function Navbar({ text, theme, language, onThemeToggle, onLanguageToggle }) {
+function Navbar({
+  text,
+  theme,
+  language,
+  onThemeToggle,
+  onLanguageToggle,
+  onScrollToSection,
+  sectionRefs,
+}) {
   return (
     <nav>
       <div className="nav-logo">AR.dev</div>
       <ul className="nav-links">
         <li>
-          <a href="#about">{text.navAbout}</a>
+          <button className="nav-link-btn" type="button" onClick={() => onScrollToSection(sectionRefs.about)}>
+            {text.navAbout}
+          </button>
         </li>
         <li>
-          <a href="#skills">{text.navSkills}</a>
+          <button className="nav-link-btn" type="button" onClick={() => onScrollToSection(sectionRefs.skills)}>
+            {text.navSkills}
+          </button>
         </li>
         <li>
-          <a href="#projects">{text.navProjects}</a>
+          <button className="nav-link-btn" type="button" onClick={() => onScrollToSection(sectionRefs.projects)}>
+            {text.navProjects}
+          </button>
         </li>
         <li>
-          <a href="#contact">{text.navContact}</a>
+          <button className="nav-link-btn" type="button" onClick={() => onScrollToSection(sectionRefs.contact)}>
+            {text.navContact}
+          </button>
         </li>
       </ul>
       <div className="nav-controls">
@@ -40,9 +56,9 @@ function Navbar({ text, theme, language, onThemeToggle, onLanguageToggle }) {
           {language === "ar" ? "EN" : "AR"}
         </button>
         <div className="nav-divider"></div>
-        <a href="#contact" className="nav-cta">
+        <button className="nav-cta" type="button" onClick={() => onScrollToSection(sectionRefs.contact)}>
           {text.navHire}
-        </a>
+        </button>
       </div>
     </nav>
   );

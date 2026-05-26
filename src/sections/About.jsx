@@ -1,6 +1,6 @@
 import { cvLink } from "../data/personal";
 
-function About({ text }) {
+function About({ text, sectionRef, onScrollToSection, contactRef }) {
   const stats = [
     { number: "160+", label: text.statTraining },
     { number: "5+", label: text.statProjects },
@@ -9,7 +9,7 @@ function About({ text }) {
   ];
 
   return (
-    <section id="about">
+    <section id="about" ref={sectionRef}>
       <div className="section-wrap">
         <div className="section-label">{text.sectionAbout}</div>
         <h2 className="section-title">
@@ -21,7 +21,7 @@ function About({ text }) {
             <p>{text.aboutP2}</p>
             <p>{text.aboutP3}</p>
             <div className="about-ctas">
-              <a href="#contact" className="btn-primary about-btn">{text.getInTouch}</a>
+              <button className="btn-primary about-btn" type="button" onClick={() => onScrollToSection(contactRef)}>{text.getInTouch}</button>
               <a href={cvLink} target="_blank" rel="noreferrer" className="btn-outline about-btn">{text.downloadCv}</a>
             </div>
           </div>

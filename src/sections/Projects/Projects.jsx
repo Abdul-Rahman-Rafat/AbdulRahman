@@ -2,9 +2,9 @@ import { GitHubIcon } from "../../components/Icons";
 import { projects } from "../../data/projects";
 import ProjectCard from "./ProjectCard";
 
-function Projects({ text }) {
+function Projects({ text, sectionRef }) {
   return (
-    <section id="projects">
+    <section id="projects" ref={sectionRef}>
       <div className="section-wrap">
         <div className="section-label">{text.sectionProjects}</div>
         <h2 className="section-title">

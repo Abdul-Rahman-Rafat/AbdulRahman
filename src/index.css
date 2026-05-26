@@ -215,15 +215,21 @@
         gap: 8px;
         flex-direction: row;
       }
-      .nav-links a {
+      .nav-links a,
+      .nav-link-btn {
         font-size: 14px;
         color: var(--muted);
         text-decoration: none;
         letter-spacing: 0.05em;
         transition: color 0.25s;
         position: relative;
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+        font-family: var(--font-body);
       }
-      .nav-links a::after {
+      .nav-links a::after,
+      .nav-link-btn::after {
         content: "";
         position: absolute;
         bottom: -3px;
@@ -233,10 +239,12 @@
         background: var(--accent);
         transition: right 0.3s ease;
       }
-      .nav-links a:hover {
+      .nav-links a:hover,
+      .nav-link-btn:hover {
         color: var(--cream);
       }
-      .nav-links a:hover::after {
+      .nav-links a:hover::after,
+      .nav-link-btn:hover::after {
         right: 0;
       }
       .nav-cta {
@@ -249,6 +257,8 @@
         text-decoration: none;
         text-transform: uppercase;
         transition: all 0.25s;
+        background: transparent;
+        cursor: pointer;
       }
       .nav-cta:hover {
         background: var(--accent);
@@ -575,6 +585,8 @@
         text-transform: uppercase;
         font-weight: 700;
         transition: all 0.25s;
+        border: 0;
+        cursor: pointer;
       }
       .btn-primary:hover {
         background: var(--cream);
@@ -589,6 +601,7 @@
         text-decoration: none;
         text-transform: uppercase;
         transition: all 0.25s;
+        cursor: pointer;
       }
       .btn-outline:hover {
         border-color: rgba(240, 237, 232, 0.3);
@@ -673,6 +686,61 @@
       .section-title em {
         font-style: italic;
         color: var(--accent);
+      }
+
+      .rocket-nav {
+        position: fixed;
+        right: 24px;
+        top: 50%;
+        z-index: 450;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        transform: translateY(-50%);
+      }
+      .rocket-nav::before {
+        content: "";
+        position: absolute;
+        top: 16px;
+        bottom: 16px;
+        left: 50%;
+        width: 1px;
+        background: linear-gradient(to bottom, transparent, rgba(0, 229, 204, 0.35), transparent);
+        transform: translateX(-50%);
+      }
+      .rocket-nav-btn {
+        width: 38px;
+        height: 34px;
+        border: 1px solid var(--border);
+        background: rgba(15, 15, 18, 0.9);
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        cursor: pointer;
+        position: relative;
+        clip-path: polygon(12% 0, 88% 0, 100% 50%, 88% 100%, 12% 100%, 0 50%);
+        transition:
+          color 0.25s,
+          border-color 0.25s,
+          background 0.25s,
+          transform 0.25s;
+      }
+      .rocket-nav-btn:hover {
+        color: var(--accent);
+        border-color: rgba(0, 229, 204, 0.45);
+        background: rgba(0, 229, 204, 0.08);
+        transform: translateX(-4px);
+      }
+      :root.rtl .rocket-nav {
+        right: auto;
+        left: 24px;
+      }
+      :root.rtl .rocket-nav-btn:hover {
+        transform: translateX(4px);
       }
 
       /* â”€â”€â”€ About â”€â”€â”€ */
@@ -1151,6 +1219,18 @@
         }
         .section-wrap {
           padding: 80px 20px;
+        }
+        .rocket-nav {
+          right: 12px;
+          gap: 6px;
+        }
+        :root.rtl .rocket-nav {
+          left: 12px;
+        }
+        .rocket-nav-btn {
+          width: 32px;
+          height: 30px;
+          font-size: 9px;
         }
         footer {
           flex-direction: column;

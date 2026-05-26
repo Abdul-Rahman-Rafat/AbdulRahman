@@ -1,14 +1,14 @@
 import { skills } from "../data/skills";
 
-function Skills({ text }) {
+function Skills({ text, sectionRef }) {
   return (
-    <div className="skills-bg">
+    <section className="skills-bg" id="skills" ref={sectionRef}>
       <div className="section-wrap">
         <div className="section-label">{text.sectionSkills}</div>
         <h2 className="section-title">
           {text.skillsTitle} <em>{text.skillsTitleEm}</em>
         </h2>
-        <div className="skills-grid" id="skills">
+        <div className="skills-grid">
           {skills.map((skill) => (
             <div className="skill-item" key={skill.name}>
               <i className={skill.icon} style={{ color: skill.color }}></i>
@@ -17,7 +17,7 @@ function Skills({ text }) {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
