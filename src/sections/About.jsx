@@ -21,7 +21,7 @@ function About({ text, sectionRef, onScrollToSection, contactRef }) {
             <p>{text.aboutP2}</p>
             <p>{text.aboutP3}</p>
             <div className="about-ctas">
-              <button className="btn-primary about-btn" type="button" onClick={() => onScrollToSection(contactRef)}>{text.getInTouch}</button>
+              <button className="btn-primary about-btn" type="button" onClick={() => onScrollToSection(contactRef, "contact")}>{text.getInTouch}</button>
               <a href={cvLink} target="_blank" rel="noreferrer" className="btn-outline about-btn">{text.downloadCv}</a>
             </div>
           </div>

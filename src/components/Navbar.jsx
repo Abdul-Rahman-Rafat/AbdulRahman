@@ -7,6 +7,7 @@ function Navbar({
   onThemeToggle,
   onLanguageToggle,
   onScrollToSection,
+  activeSection,
   sectionRefs,
 }) {
   return (
@@ -14,22 +15,38 @@ function Navbar({
       <div className="nav-logo">AR.dev</div>
       <ul className="nav-links">
         <li>
-          <button className="nav-link-btn" type="button" onClick={() => onScrollToSection(sectionRefs.about)}>
+          <button
+            className={`nav-link-btn ${activeSection === "about" ? "active" : ""}`}
+            type="button"
+            onClick={() => onScrollToSection(sectionRefs.about.ref, sectionRefs.about.id)}
+          >
             {text.navAbout}
           </button>
         </li>
         <li>
-          <button className="nav-link-btn" type="button" onClick={() => onScrollToSection(sectionRefs.skills)}>
+          <button
+            className={`nav-link-btn ${activeSection === "skills" ? "active" : ""}`}
+            type="button"
+            onClick={() => onScrollToSection(sectionRefs.skills.ref, sectionRefs.skills.id)}
+          >
             {text.navSkills}
           </button>
         </li>
         <li>
-          <button className="nav-link-btn" type="button" onClick={() => onScrollToSection(sectionRefs.projects)}>
+          <button
+            className={`nav-link-btn ${activeSection === "projects" ? "active" : ""}`}
+            type="button"
+            onClick={() => onScrollToSection(sectionRefs.projects.ref, sectionRefs.projects.id)}
+          >
             {text.navProjects}
           </button>
         </li>
         <li>
-          <button className="nav-link-btn" type="button" onClick={() => onScrollToSection(sectionRefs.contact)}>
+          <button
+            className={`nav-link-btn ${activeSection === "contact" ? "active" : ""}`}
+            type="button"
+            onClick={() => onScrollToSection(sectionRefs.contact.ref, sectionRefs.contact.id)}
+          >
             {text.navContact}
           </button>
         </li>
@@ -56,7 +73,7 @@ function Navbar({
           {language === "ar" ? "EN" : "AR"}
         </button>
         <div className="nav-divider"></div>
-        <button className="nav-cta" type="button" onClick={() => onScrollToSection(sectionRefs.contact)}>
+        <button className="nav-cta" type="button" onClick={() => onScrollToSection(sectionRefs.contact.ref, sectionRefs.contact.id)}>
           {text.navHire}
         </button>
       </div>

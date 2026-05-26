@@ -120,7 +120,7 @@ function Hero({ text, sectionRef, onScrollToSection, projectsRef }) {
         <h1 className="hero-name">Abdulrahman <em>Rafat</em></h1>
         <p className="hero-subtitle">{text.heroSubtitle}</p>
         <div className="hero-ctas">
-          <button className="btn-primary" type="button" onClick={() => onScrollToSection(projectsRef)}>{text.viewWork}</button>
+          <button className="btn-primary" type="button" onClick={() => onScrollToSection(projectsRef, "projects")}>{text.viewWork}</button>
           <a href={cvLink} target="_blank" rel="noreferrer" className="btn-outline">{text.downloadCv}</a>
         </div>
       </div>

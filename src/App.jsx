@@ -19,13 +19,14 @@ function App() {
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
+  const [activeSection, setActiveSection] = useState("home");
   const text = translations[language];
   const sections = [
-    { label: "Home", ref: homeRef },
-    { label: "About", ref: aboutRef },
-    { label: "Skills", ref: skillsRef },
-    { label: "Projects", ref: projectsRef },
-    { label: "Contact", ref: contactRef },
+    { id: "home", label: "Home", ref: homeRef },
+    { id: "about", label: "About", ref: aboutRef },
+    { id: "skills", label: "Skills", ref: skillsRef },
+    { id: "projects", label: "Projects", ref: projectsRef },
+    { id: "contact", label: "Contact", ref: contactRef },
   ];
 
   useEffect(() => {
@@ -65,6 +66,41 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const observedSections = [
+      { id: "home", ref: homeRef },
+      { id: "about", ref: aboutRef },
+      { id: "skills", ref: skillsRef },
+      { id: "projects", ref: projectsRef },
+      { id: "contact", ref: contactRef },
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleSection) {
+          setActiveSection(visibleSection.target.dataset.section);
+        }
+      },
+      {
+        rootMargin: "-35% 0px -45% 0px",
+        threshold: [0.1, 0.35, 0.6],
+      },
+    );
+
+    observedSections.forEach((section) => {
+      if (section.ref.current) {
+        section.ref.current.dataset.section = section.id;
+        observer.observe(section.ref.current);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   function handleThemeToggle() {
     setTheme(theme === "dark" ? "light" : "dark");
   }
@@ -73,7 +109,11 @@ function App() {
     setLanguage(language === "en" ? "ar" : "en");
   }
 
-  function scrollToSection(sectionRef) {
+  function scrollToSection(sectionRef, sectionId) {
+    if (sectionId) {
+      setActiveSection(sectionId);
+    }
+
     sectionRef.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -91,14 +131,15 @@ function App() {
         onThemeToggle={handleThemeToggle}
         onLanguageToggle={handleLanguageToggle}
         onScrollToSection={scrollToSection}
+        activeSection={activeSection}
         sectionRefs={{
-          about: aboutRef,
-          skills: skillsRef,
-          projects: projectsRef,
-          contact: contactRef,
+          about: { ref: aboutRef, id: "about" },
+          skills: { ref: skillsRef, id: "skills" },
+          projects: { ref: projectsRef, id: "projects" },
+          contact: { ref: contactRef, id: "contact" },
         }}
       />
-      <RocketNavigator sections={sections} onScrollToSection={scrollToSection} />
+      <RocketNavigator sections={sections} activeSection={activeSection} onScrollToSection={scrollToSection} />
       <Hero text={text} sectionRef={homeRef} onScrollToSection={scrollToSection} projectsRef={projectsRef} />
       <About text={text} sectionRef={aboutRef} onScrollToSection={scrollToSection} contactRef={contactRef} />
       <Skills text={text} sectionRef={skillsRef} />

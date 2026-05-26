@@ -1,5 +1,5 @@
 export const cvLink =
-  "https://drive.google.com/file/d/1JFRk8A8D1k2VtPzK-LnTD8s2t9WR-KSO/view?usp=drive_link";
+  "https://drive.google.com/file/d/1zK_KQ5VdOCZg__I_ao4n2ll3_JVpWR0_/view?usp=sharing";
 
 export const socialLinks = [
   {

@@ -243,8 +243,12 @@
       .nav-link-btn:hover {
         color: var(--cream);
       }
+      .nav-link-btn.active {
+        color: var(--accent);
+      }
       .nav-links a:hover::after,
-      .nav-link-btn:hover::after {
+      .nav-link-btn:hover::after,
+      .nav-link-btn.active::after {
         right: 0;
       }
       .nav-cta {
@@ -734,6 +738,12 @@
         border-color: rgba(0, 229, 204, 0.45);
         background: rgba(0, 229, 204, 0.08);
         transform: translateX(-4px);
+      }
+      .rocket-nav-btn.active {
+        color: var(--bg);
+        border-color: rgba(0, 229, 204, 0.75);
+        background: var(--accent);
+        box-shadow: 0 0 18px rgba(0, 229, 204, 0.25);
       }
       :root.rtl .rocket-nav {
         right: auto;
