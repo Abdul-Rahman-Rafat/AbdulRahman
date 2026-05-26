@@ -1,6 +1,12 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import { RiCloseLine, RiMailLine, RiMapPinLine, RiPhoneLine, RiSendPlaneLine } from "@remixicon/react";
+import {
+  RiCloseLine,
+  RiMailLine,
+  RiMapPinLine,
+  RiPhoneLine,
+  RiSendPlaneLine,
+} from "@remixicon/react";
 import { contactDetails, socialLinks } from "../data/personal";
 
 function Contact({ text, sectionRef }) {
@@ -27,7 +33,9 @@ function Contact({ text, sectionRef }) {
       )
       .then(
         () => {
-          setFormMessage("Message sent successfully. I'll get back to you soon.");
+          setFormMessage(
+            "Message sent successfully. I'll get back to you soon.",
+          );
           setIsSubmitting(false);
           event.target.reset();
         },
@@ -51,16 +59,21 @@ function Contact({ text, sectionRef }) {
           <div className="contact-info-panel">
             <div className="section-label">{text.sectionContact}</div>
             <h2 className="contact-big">
-              {text.contactTitle}<br />
+              {text.contactTitle}
+              <br />
               {text.contactTitleSecond} <em>{text.contactTitleEm}</em>
             </h2>
 
             <div className="contact-details">
               {contactDetails.map((detail) => (
                 <div className="contact-detail" key={detail.labelKey}>
-                  <div className="contact-detail-icon">{getDetailIcon(detail.labelKey)}</div>
+                  <div className="contact-detail-icon">
+                    {getDetailIcon(detail.labelKey)}
+                  </div>
                   <div>
-                    <div className="contact-detail-label">{text[detail.labelKey]}</div>
+                    <div className="contact-detail-label">
+                      {text[detail.labelKey]}
+                    </div>
                     {detail.href ? (
                       <a href={detail.href}>{detail.value}</a>
                     ) : (
@@ -73,21 +86,36 @@ function Contact({ text, sectionRef }) {
 
             <div className="social-row">
               {socialLinks.map((link) => (
-                <a href={link.url} target="_blank" rel="noreferrer" className="social-btn" key={link.name}>
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="social-btn"
+                  key={link.name}
+                >
                   {link.name}
                 </a>
               ))}
             </div>
 
-            <button className="btn-primary contact-open-btn" type="button" onClick={handleOpenForm}>
+            <button
+              className="btn-primary contact-open-btn"
+              type="button"
+              onClick={handleOpenForm}
+            >
               {text.sendMessage}
-              <RiSendPlaneLine size={14} />
+              {/* <RiSendPlaneLine size={14} /> */}
             </button>
           </div>
 
           {isFormOpen && (
             <div className="contact-form-panel">
-              <button className="contact-close-btn" type="button" onClick={() => setIsFormOpen(false)} aria-label="Close form">
+              <button
+                className="contact-close-btn"
+                type="button"
+                onClick={() => setIsFormOpen(false)}
+                aria-label="Close form"
+              >
                 <RiCloseLine size={18} />
               </button>
 
@@ -95,24 +123,48 @@ function Contact({ text, sectionRef }) {
               <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-field">
                   <label htmlFor="name">Your Name</label>
-                  <input type="text" id="name" name="from_name" placeholder="Your name" required />
+                  <input
+                    type="text"
+                    id="name"
+                    name="from_name"
+                    placeholder="Your name"
+                    required
+                  />
                 </div>
 
                 <div className="form-field">
                   <label htmlFor="email">Your Email</label>
-                  <input type="email" id="email" name="from_email" placeholder="example@gmail.com" required />
+                  <input
+                    type="email"
+                    id="email"
+                    name="from_email"
+                    placeholder="example@gmail.com"
+                    required
+                  />
                 </div>
 
                 <div className="form-field">
                   <label htmlFor="message">Your Message</label>
-                  <textarea id="message" name="message" placeholder="Hello, I'd like to talk about..." rows="5" required></textarea>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Hello, I'd like to talk about..."
+                    rows="5"
+                    required
+                  ></textarea>
                 </div>
 
-                <button className="btn-primary contact-submit-btn" type="submit" disabled={isSubmitting}>
+                <button
+                  className="btn-primary contact-submit-btn"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
                   {isSubmitting ? "Sending..." : "Send Message"}
-                  <RiSendPlaneLine size={15} />
+                  {/* <RiSendPlaneLine size={15} /> */}
                 </button>
-                {formMessage && <p className="contact-form-message">{formMessage}</p>}
+                {formMessage && (
+                  <p className="contact-form-message">{formMessage}</p>
+                )}
               </form>
             </div>
           )}
