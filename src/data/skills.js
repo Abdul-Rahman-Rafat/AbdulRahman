@@ -62,6 +62,7 @@ export const skills = [
   { name: "HTML5", icon: "devicon-html5-plain colored" },
   { name: "CSS3", icon: "devicon-css3-plain colored" },
   { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+  { name: "TypeScript", icon: "devicon-typescript-plain colored" },
   { name: "React", icon: "devicon-react-original colored" },
   { name: "Tailwind", icon: "devicon-tailwindcss-plain colored" },
 
