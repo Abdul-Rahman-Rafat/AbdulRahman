@@ -1,4 +1,5 @@
 import { skills } from "../data/skills";
+import shad from "../assets/shadcnui.webp";
 
 function Skills({ text, sectionRef }) {
   return (
@@ -12,7 +13,7 @@ function Skills({ text, sectionRef }) {
           {skills.map((skill) => (
             <div className="skill-item" key={skill.name}>
               {skill.name === "Shadcn/ui" ? (
-                <img src="/src/assets/shadcnui.webp" alt={skill.name} />
+                <img src={shad} alt={skill.name} />
               ) : (
                 <i className={skill.icon} style={{ color: skill.color }}></i>
               )}
