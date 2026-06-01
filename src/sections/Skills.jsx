@@ -11,7 +11,11 @@ function Skills({ text, sectionRef }) {
         <div className="skills-grid">
           {skills.map((skill) => (
             <div className="skill-item" key={skill.name}>
-              <i className={skill.icon} style={{ color: skill.color }}></i>
+              {skill.name === "Shadcn/ui" ? (
+                <img src="/src/assets/shadcnui.webp" alt={skill.name} />
+              ) : (
+                <i className={skill.icon} style={{ color: skill.color }}></i>
+              )}
               <span>{skill.name}</span>
             </div>
           ))}

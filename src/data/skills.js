@@ -64,6 +64,10 @@ export const skills = [
   { name: "JavaScript", icon: "devicon-javascript-plain colored" },
   { name: "React", icon: "devicon-react-original colored" },
   { name: "Tailwind", icon: "devicon-tailwindcss-plain colored" },
+
+  //devicon-shadcn-ui-plain colored doesn't exist
+  { name: "Shadcn/ui", icon: "devicon-shadcn-ui-plain colored" },
+
   { name: "Redux", icon: "devicon-redux-plain colored" },
   { name: "axios", icon: "devicon-axios-plain colored" },
   { name: "Python", icon: "devicon-python-plain colored" },
