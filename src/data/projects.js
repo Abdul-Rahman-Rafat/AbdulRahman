@@ -1,6 +1,17 @@
 export const projects = [
   {
     number: "01",
+    preview: "Nutra",
+    title: "Nutra eCommerce",
+    image: "/projects/project6.webp",
+    description:
+      "An e-commerce web app for organic food products, built with React. No UI library. State managed with Context API + useReducer.",
+    tags: ["React", "Context API", "useReducer", "Router"],
+    liveUrl: "https://nutra-ten.vercel.app/",
+    githubUrl: "https://github.com/Abdul-Rahman-Rafat/Nutra.git",
+  },
+  {
+    number: "02",
     preview: "Tavola",
     title: "Tavola Restaurant",
     image: "/projects/project5.png",
@@ -11,7 +22,7 @@ export const projects = [
     githubUrl: "https://github.com/Abdul-Rahman-Rafat/TavolaRestaurant.git",
   },
   {
-    number: "02",
+    number: "03",
     preview: "WindsMeet",
     title: "WindsMeet Travel",
     image: "/projects/project4.png",
@@ -22,7 +33,7 @@ export const projects = [
     githubUrl: "https://github.com/Abdul-Rahman-Rafat/WindsMeet.git",
   },
   {
-    number: "03",
+    number: "04",
     preview: "Grino",
     title: "Grino eCommerce",
     image: "/projects/project2.png",
@@ -33,7 +44,7 @@ export const projects = [
     githubUrl: "https://github.com/Abdul-Rahman-Rafat/Grino-eCommerce.git",
   },
   {
-    number: "04",
+    number: "05",
     preview: "E-Commerce",
     title: "E-Commerce Platform",
     image: "/projects/project3.png",
@@ -44,7 +55,7 @@ export const projects = [
     githubUrl: "https://github.com/Abdul-Rahman-Rafat/E-commerce.git",
   },
   {
-    number: "05",
+    number: "06",
     preview: "LearnHub",
     title: "LearnHub",
     image: "/projects/project1.png",
