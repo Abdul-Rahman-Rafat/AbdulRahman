@@ -6,6 +6,7 @@ export const orbitSkills = [
     angle: 0,
     speed: 0.4,
   },
+
   {
     name: "Python",
     icon: "devicon-python-plain colored",
@@ -29,8 +30,16 @@ export const orbitSkills = [
     speed: 0.4,
   },
   {
-    name: "HTML5",
-    icon: "devicon-html5-plain colored",
+    name: "Next.js",
+    icon: "devicon-nextjs-plain ",
+    orbit: "inner",
+    angle: 180,
+    speed: 0.4,
+  },
+
+  {
+    name: "axios",
+    icon: "devicon-axios-plain colored",
     orbit: "outer",
     angle: 20,
     speed: -0.25,
@@ -64,6 +73,7 @@ export const skills = [
   { name: "JavaScript", icon: "devicon-javascript-plain colored" },
   { name: "TypeScript", icon: "devicon-typescript-plain colored" },
   { name: "React", icon: "devicon-react-original colored" },
+  { name: "Next.js", icon: "devicon-nextjs-plain " },
   { name: "Tailwind", icon: "devicon-tailwindcss-plain colored" },
 
   //devicon-shadcn-ui-plain colored doesn't exist
