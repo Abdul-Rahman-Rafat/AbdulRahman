@@ -1,5 +1,7 @@
 import { skills } from "../data/skills";
 import shad from "../assets/shadcnui.webp";
+import zodicon from "../assets/zod.webp";
+import reacthookform from "../assets/reacthookform.webp";
 
 function Skills({ text, sectionRef }) {
   return (
@@ -14,10 +16,13 @@ function Skills({ text, sectionRef }) {
             <div className="skill-item" key={skill.name}>
               {skill.name === "Shadcn/ui" ? (
                 <img src={shad} alt={skill.name} />
+              ) : skill.name === "Zod" ? (
+                <img src={zodicon} alt={skill.name} />
+              ) : skill.name === "React Hook Form" ? (
+                <img src={reacthookform} alt={skill.name} />
               ) : (
                 <i className={skill.icon} style={{ color: skill.color }}></i>
               )}
-              <span>{skill.name}</span>
             </div>
           ))}
         </div>

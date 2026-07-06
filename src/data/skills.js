@@ -78,6 +78,9 @@ export const skills = [
 
   //devicon-shadcn-ui-plain colored doesn't exist
   { name: "Shadcn/ui", icon: "devicon-shadcn-ui-plain colored" },
+  // react hook form and zod too doesn't exist
+  { name: "React Hook Form", icon: "devicon-react-hook-form-plain colored" },
+  { name: "Zod", icon: "devicon-zod-plain colored" },
 
   { name: "Redux", icon: "devicon-redux-plain colored" },
   { name: "axios", icon: "devicon-axios-plain colored" },
