@@ -1,4 +1,4 @@
-import { RiRocket2Line } from "@remixicon/react";
+import { RiUser6Fill } from "@remixicon/react";
 
 function RocketNavigator({ sections, activeSection, onScrollToSection }) {
   return (
@@ -11,7 +11,7 @@ function RocketNavigator({ sections, activeSection, onScrollToSection }) {
           aria-label={`Go to ${section.label}`}
           key={section.label}
         >
-          {index === 0 ? <RiRocket2Line size={18} /> : String(index).padStart(2, "0")}
+          {index === 0 ? <RiUser6Fill /> : String(index).padStart(2, "0")}
         </button>
       ))}
     </div>
