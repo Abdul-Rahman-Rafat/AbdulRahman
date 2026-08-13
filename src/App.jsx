@@ -10,6 +10,7 @@ import Hero from "./sections/Hero";
 import Projects from "./sections/Projects/Projects";
 import Skills from "./sections/Skills";
 import { translations } from "./data/translations";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -45,7 +46,10 @@ function App() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const element = entry.target;
-            setTimeout(() => element.classList.add("visible"), Number(element.dataset.delay || 0));
+            setTimeout(
+              () => element.classList.add("visible"),
+              Number(element.dataset.delay || 0),
+            );
             observer.unobserve(element);
           }
         });
@@ -58,10 +62,12 @@ function App() {
       observer.observe(element);
     });
 
-    document.querySelectorAll(".project-card, .project-more").forEach((element, index) => {
-      element.dataset.delay = index * 90;
-      observer.observe(element);
-    });
+    document
+      .querySelectorAll(".project-card, .project-more")
+      .forEach((element, index) => {
+        element.dataset.delay = index * 90;
+        observer.observe(element);
+      });
 
     return () => observer.disconnect();
   }, []);
@@ -139,13 +145,28 @@ function App() {
           contact: { ref: contactRef, id: "contact" },
         }}
       />
-      <RocketNavigator sections={sections} activeSection={activeSection} onScrollToSection={scrollToSection} />
-      <Hero text={text} sectionRef={homeRef} onScrollToSection={scrollToSection} projectsRef={projectsRef} />
-      <About text={text} sectionRef={aboutRef} onScrollToSection={scrollToSection} contactRef={contactRef} />
+      <RocketNavigator
+        sections={sections}
+        activeSection={activeSection}
+        onScrollToSection={scrollToSection}
+      />
+      <Hero
+        text={text}
+        sectionRef={homeRef}
+        onScrollToSection={scrollToSection}
+        projectsRef={projectsRef}
+      />
+      <About
+        text={text}
+        sectionRef={aboutRef}
+        onScrollToSection={scrollToSection}
+        contactRef={contactRef}
+      />
       <Skills text={text} sectionRef={skillsRef} />
       <Projects text={text} sectionRef={projectsRef} />
       <Contact text={text} sectionRef={contactRef} />
       <Footer text={text} />
+      <Analytics />
     </>
   );
 }
