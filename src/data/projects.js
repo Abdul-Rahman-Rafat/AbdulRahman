@@ -29,10 +29,24 @@ export const projects = [
     description:
       "XO Shop is a full-stack e-commerce portfolio project built with Next.js. It pairs a responsive storefront and editorial landing page with authentication, a persistent shopping cart, Stripe Checkout, and a small SQLite-backed order system.",
     tags: ["NextJs", "Prisma", "React Hook Form", "Zod", "Stripe", "CSS"],
-    liveUrl: "https://github.com/Abdul-Rahman-Rafat/XO-eCom.git",
+    githubUrl: "https://github.com/Abdul-Rahman-Rafat/XO-eCom.git",
+    liveUrl: "",
   },
+
   {
     number: "04",
+    preview: "Bundle Builder",
+    title: "Bundle Builder",
+    image: "/projects/project8.webp",
+    description:
+      "A single React page application allows users to build a custom security system by selecting cameras, plans, sensors, and storage.",
+    tags: ["React ", "Context API", "Tailwind CSS "],
+    liveUrl: "https://bundle-builder-beige-five.vercel.app/",
+    githubUrl: "https://github.com/Abdul-Rahman-Rafat/Bundle-Builder.git",
+  },
+
+  {
+    number: "05",
     preview: "WindsMeet",
     title: "WindsMeet Travel",
     image: "/projects/project4.webp",
@@ -43,7 +57,7 @@ export const projects = [
     githubUrl: "https://github.com/Abdul-Rahman-Rafat/WindsMeet.git",
   },
   {
-    number: "05",
+    number: "06",
     preview: "Grino",
     title: "Grino eCommerce",
     image: "/projects/project2.webp",
@@ -54,7 +68,7 @@ export const projects = [
     githubUrl: "https://github.com/Abdul-Rahman-Rafat/Grino-eCommerce.git",
   },
   {
-    number: "06",
+    number: "07",
     preview: "E-Commerce",
     title: "E-Commerce Platform",
     image: "/projects/project3.webp",
@@ -65,7 +79,7 @@ export const projects = [
     githubUrl: "https://github.com/Abdul-Rahman-Rafat/E-commerce.git",
   },
   {
-    number: "07",
+    number: "08",
     preview: "LearnHub",
     title: "LearnHub",
     image: "/projects/project1.webp",
