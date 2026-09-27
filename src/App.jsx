@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import BackgroundCanvas from "./components/BackgroundCanvas";
-import CustomCursor from "./components/CustomCursor";
+// import CustomCursor from "./components/CustomCursor";
 import Navbar from "./components/Navbar";
 import RocketNavigator from "./components/RocketNavigator";
 import About from "./sections/About";
@@ -129,7 +129,7 @@ function App() {
   return (
     <>
       <BackgroundCanvas />
-      <CustomCursor />
+      {/* <CustomCursor /> */}
       <Navbar
         text={text}
         theme={theme}
